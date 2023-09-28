@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import CountryDropdown from "./components/CountryDropdown";
+import UniversityList from "./components/UniversityList";
 
 function App() {
   const [selectedCountry, setSelectedCountry] = useState("Sweden");
+  const [universities, setUniversities] = useState([]);
 
   const fetchUniversities = async (country) => {
     try {
@@ -11,6 +13,7 @@ function App() {
       );
       const data = await response.json();
       console.log(data);
+      setUniversities(data);
     } catch (error) {
       console.error("Error fetching universities:", error);
     }
@@ -27,6 +30,7 @@ function App() {
         countries={["Sweden", "Norway", "India", "United States"]}
         setSelectedCountry={setSelectedCountry}
       />
+      <UniversityList universities={universities} />
     </div>
   );
 }
