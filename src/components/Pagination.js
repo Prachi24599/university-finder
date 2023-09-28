@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UniversityContext } from "../context/UniversityContext";
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination = () => {
+  const { currentPage, totalPages, handlePageChange } =
+    useContext(UniversityContext);
+
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
+
   return (
     <div>
       <button
-        onClick={() => onPageChange(currentPage - 1)}
+        onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
         Previous
@@ -17,7 +22,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         {pageNumbers.map((pageNumber) => (
           <button
             key={pageNumber}
-            onClick={() => onPageChange(pageNumber)}
+            onClick={() => handlePageChange(pageNumber)}
             className={currentPage === pageNumber ? "active" : ""}
           >
             {pageNumber}
@@ -25,7 +30,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         ))}
       </div>
       <button
-        onClick={() => onPageChange(currentPage + 1)}
+        onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
         Next

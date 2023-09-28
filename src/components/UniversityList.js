@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { UniversityContext } from "../context/UniversityContext";
 
-const UniversityList = ({ universities }) => {
+const UniversityList = () => {
+  const { universities, currentPage, perPage } = useContext(UniversityContext);
+
+  // Calculate the range of universities to display on the current page
+  const startIndex = (currentPage - 1) * perPage;
+  const endIndex = startIndex + perPage;
+  const universitiesToShow = universities.slice(startIndex, endIndex);
+
   return (
     <div>
-      {universities.map((uni, index) => (
+      {universitiesToShow.map((uni, index) => (
         <div key={index}>
           <p>
             <strong>Name:</strong> {uni.name}
