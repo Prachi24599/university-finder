@@ -25,7 +25,13 @@ function App() {
 
   useEffect(() => {
     fetchUniversities(selectedCountry);
-  }, [selectedCountry]);
+  }, [selectedCountry, currentPage]);
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
 
   return (
     <div className="App">
@@ -35,7 +41,11 @@ function App() {
         setSelectedCountry={setSelectedCountry}
       />
       <UniversityList universities={universities} />
-      <Pagination currentPage={currentPage} totalPages={totalPages} />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 }
