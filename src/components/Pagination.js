@@ -25,7 +25,7 @@ const Pagination = () => {
             key={pageNumber}
             onClick={() => handlePageChange(pageNumber)}
             // className={currentPage === pageNumber ? "active" : ""}
-            className={`px-3 py-2 rounded-md focus:outline-none ${
+            className={`px-3 py-2 mb-2 rounded-md focus:outline-none ${
               currentPage === pageNumber
                 ? "bg-indigo-500 text-white"
                 : "bg-gray-200 hover:bg-gray-300 text-gray-600"

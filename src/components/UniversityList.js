@@ -13,19 +13,20 @@ const UniversityList = () => {
     <div>
       {universitiesToShow.map((uni, index) => (
         <div key={index} className="bg-white p-4 mb-4 rounded-md shadow-md">
-          <p className="text-lg font-semibold mb-2">
-            <strong>Name:</strong> {uni.name}
+          <p className="text-lg mb-2">
+            <strong className="text-gray-600">Name:</strong> {uni.name}
           </p>
           {uni["state-province"] && (
             <p>
-              <strong>State : </strong> {uni["state-province"]}
+              <strong className="text-gray-600">State : </strong>{" "}
+              {uni["state-province"]}
             </p>
           )}
           <p>
-            <strong>Country : </strong> {uni.country}
+            <strong className="text-gray-600">Country : </strong> {uni.country}
           </p>
           <p>
-            <strong>Link : </strong>
+            <strong className="text-gray-600">Link : </strong>
             <a
               href={uni.web_pages[0]}
               target="_blank"
