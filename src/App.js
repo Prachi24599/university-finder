@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import CountryDropdown from "./components/CountryDropdown";
 import UniversityList from "./components/UniversityList";
+import Pagination from "./components/Pagination";
 
 function App() {
   const [selectedCountry, setSelectedCountry] = useState("Sweden");
   const [universities, setUniversities] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   const fetchUniversities = async (country) => {
     try {
@@ -14,6 +17,7 @@ function App() {
       const data = await response.json();
       console.log(data);
       setUniversities(data);
+      setTotalPages(Math.ceil(data.length / 20));
     } catch (error) {
       console.error("Error fetching universities:", error);
     }
@@ -31,6 +35,7 @@ function App() {
         setSelectedCountry={setSelectedCountry}
       />
       <UniversityList universities={universities} />
+      <Pagination currentPage={currentPage} totalPages={totalPages} />
     </div>
   );
 }
