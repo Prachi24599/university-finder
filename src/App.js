@@ -7,6 +7,7 @@ function App() {
   const [selectedCountry, setSelectedCountry] = useState("Sweden");
   const [universities, setUniversities] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [perPage] = useState(20);
   const [totalPages, setTotalPages] = useState(1);
 
   const fetchUniversities = async (country) => {
@@ -17,7 +18,7 @@ function App() {
       const data = await response.json();
       console.log(data);
       setUniversities(data);
-      setTotalPages(Math.ceil(data.length / 20));
+      setTotalPages(Math.ceil(data.length / perPage));
     } catch (error) {
       console.error("Error fetching universities:", error);
     }
@@ -25,13 +26,18 @@ function App() {
 
   useEffect(() => {
     fetchUniversities(selectedCountry);
-  }, [selectedCountry, currentPage]);
+  }, [selectedCountry]);
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
     }
   };
+
+  // Calculate the range of universities to display on the current page
+  const startIndex = (currentPage - 1) * perPage;
+  const endIndex = startIndex + perPage;
+  const universitiesToShow = universities.slice(startIndex, endIndex);
 
   return (
     <div className="App">
@@ -40,7 +46,7 @@ function App() {
         countries={["Sweden", "Norway", "India", "United States"]}
         setSelectedCountry={setSelectedCountry}
       />
-      <UniversityList universities={universities} />
+      <UniversityList universities={universitiesToShow} />
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}

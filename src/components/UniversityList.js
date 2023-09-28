@@ -3,8 +3,8 @@ import React from "react";
 const UniversityList = ({ universities }) => {
   return (
     <div>
-      {universities.map((uni) => (
-        <div key={uni.name}>
+      {universities.map((uni, index) => (
+        <div key={index}>
           <p>
             <strong>Name:</strong> {uni.name}
           </p>
