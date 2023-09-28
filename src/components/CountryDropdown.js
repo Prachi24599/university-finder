@@ -1,14 +1,18 @@
 import React from "react";
 
-const CountryDropdown = () => {
+const CountryDropdown = ({ countries, setSelectedCountry }) => {
   return (
     <div>
-      <label>Select a Country:</label>
-      <select>
-        <option value="sweden">Sweden</option>
-        <option value="norway">Norway</option>
-        <option value="india">India</option>
-        <option value="us">United States</option>
+      <label htmlFor="country-select">Select a Country:</label>
+      <select
+        id="country-select"
+        onChange={(e) => setSelectedCountry(e.target.value)}
+      >
+        {countries.map((country) => (
+          <option key={country} value={country}>
+            {country}
+          </option>
+        ))}
       </select>
     </div>
   );

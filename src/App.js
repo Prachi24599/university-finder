@@ -18,12 +18,15 @@ function App() {
 
   useEffect(() => {
     fetchUniversities(selectedCountry);
-  }, []);
+  }, [selectedCountry]);
 
   return (
     <div className="App">
       <h1>University Finder</h1>
-      <CountryDropdown />
+      <CountryDropdown
+        countries={["Sweden", "Norway", "India", "United States"]}
+        setSelectedCountry={setSelectedCountry}
+      />
     </div>
   );
 }
