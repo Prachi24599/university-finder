@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const UniversityList = ({ universities }) => {
   return (
@@ -8,9 +8,11 @@ const UniversityList = ({ universities }) => {
           <p>
             <strong>Name:</strong> {uni.name}
           </p>
-          <p>
-            <strong>State:</strong> {uni.state_province}
-          </p>
+          {uni["state-province"] && (
+            <p>
+              <strong>State:</strong> {uni["state-province"]}
+            </p>
+          )}
           <p>
             <strong>Country:</strong> {uni.country}
           </p>
