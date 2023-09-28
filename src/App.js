@@ -4,13 +4,17 @@ import Pagination from "./components/Pagination";
 
 function App() {
   return (
-    <div className="App">
-      <h1>University Finder</h1>
-      <CountryDropdown
-        countries={["Sweden", "Norway", "India", "United States"]}
-      />
-      <UniversityList />
-      <Pagination />
+    <div className="bg-gray-100 min-h-screen p-4">
+      <div className="container mx-auto">
+        <h1 className="text-3xl font-semibold text-center mb-4">
+          University Finder
+        </h1>
+        <CountryDropdown
+          countries={["Sweden", "Norway", "India", "United States"]}
+        />
+        <UniversityList />
+        <Pagination />
+      </div>
     </div>
   );
 }

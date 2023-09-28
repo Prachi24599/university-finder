@@ -5,11 +5,17 @@ const CountryDropdown = ({ countries }) => {
   const { setSelectedCountry } = useContext(UniversityContext);
 
   return (
-    <div>
-      <label htmlFor="country-select">Select a Country:</label>
+    <div className="mb-4">
+      <label
+        htmlFor="country-select"
+        className="block text-sm font-medium text-gray-700"
+      >
+        Select a Country:
+      </label>
       <select
         id="country-select"
         onChange={(e) => setSelectedCountry(e.target.value)}
+        className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       >
         {countries.map((country) => (
           <option key={country} value={country}>
