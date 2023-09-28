@@ -18,8 +18,11 @@ export default function UniversityProvider({ children }) {
       console.log(data);
       setUniversities(data);
       setTotalPages(Math.ceil(data.length / perPage));
+      setCurrentPage(1);
     } catch (error) {
       console.error("Error fetching universities:", error);
+      setUniversities([]);
+      setCurrentPage(1);
     }
   };
 
