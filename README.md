@@ -1,6 +1,6 @@
-# UniFinder
+# University Finder
 
-UniFinder is a web application that allows users to search for universities in different countries and view details about them. Users can select a country from the dropdown menu, and the application will display a list of universities in that country along with pagination for easy navigation.
+University Finder is a web application that allows users to search for universities in different countries and view details about them. Users can select a country from the dropdown menu, and the application will display a list of universities in that country along with pagination for easy navigation.
 
 ![image](https://github.com/Prachi24599/university-finder/assets/54476598/c0ad853e-5d22-4fdb-9a01-2e1524c88740)
 
@@ -40,5 +40,22 @@ To get started with UniFinder, follow these steps:
      ```bash
      http://localhost:3000.
 
+## Usage
 
+1. Select a Country: Choose a country from the dropdown menu to filter the list of universities.
+
+2. Explore Universities: Scroll through the list of universities to view their details.
+
+3. Navigate Pages: Use the pagination buttons to navigate between pages of universities.
+
+4. Click on Links: Click on the university links to visit their official websites.
+
+
+## Technologies Used
+
+React: A JavaScript library for building user interfaces.
+React Router: For handling routing and navigation within the application.
+Tailwind CSS: A utility-first CSS framework for styling the application.
+Context API: Used for state management and sharing data between components.
+Jest and React Testing Library: For writing and running unit tests.
 
