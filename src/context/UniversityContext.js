@@ -31,7 +31,7 @@ export default function UniversityProvider({ children }) {
     };
 
     fetchUniversities(selectedCountry);
-  }, [selectedCountry]);
+  }, [selectedCountry, perPage]);
 
   // Function to handle page changes
   const handlePageChange = (newPage) => {
