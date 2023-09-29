@@ -31,7 +31,7 @@ export default function UniversityProvider({ children }) {
   // Fetch universities when the selected country changes
   useEffect(() => {
     fetchUniversities(selectedCountry);
-  }, [selectedCountry]);
+  }, [selectedCountry, fetchUniversities]);
 
   // Function to handle page changes
   const handlePageChange = (newPage) => {
