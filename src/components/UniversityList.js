@@ -31,6 +31,7 @@ const UniversityList = () => {
             <a
               href={uni.web_pages[0]}
               target="_blank"
+              rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
               {uni.name} Website
