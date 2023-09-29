@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# UniFinder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+UniFinder is a web application that allows users to search for universities in different countries and view details about them. Users can select a country from the dropdown menu, and the application will display a list of universities in that country along with pagination for easy navigation.
 
-## Available Scripts
+![image](https://github.com/Prachi24599/university-finder/assets/54476598/c0ad853e-5d22-4fdb-9a01-2e1524c88740)
 
-In the project directory, you can run:
 
-### `npm start`
+![image](https://github.com/Prachi24599/university-finder/assets/54476598/05469716-c3e6-43e5-adc8-c397878b1d5a)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Country Selection**: Choose from a list of countries in the dropdown menu to filter universities by country.
+- **University List**: View a list of universities, including their name, state (or province), country, and a link to their official website.
+- **Pagination**: Navigate through the list of universities with a user-friendly pagination system.
+- **Responsive Design**: The application is designed to work on various screen sizes, including desktop and mobile devices.
+- **Context API**: Utilizes React's Context API to manage state and share data between components.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get started with UniFinder, follow these steps:
 
-### `npm run build`
+1. Clone this repository to your local machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone [<repository-url>](https://github.com/Prachi24599/university-finder.git)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
+     ```bash
+    cd unifinder
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the project dependencies:
+    ```bash
+    npm install
+    
+4. Start the development server:
+    ```bash
+    npm start
+    
+5. Open your web browser and access the application at
+     ```bash
+     http://localhost:3000.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
