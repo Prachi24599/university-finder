@@ -53,9 +53,9 @@ To get started with UniFinder, follow these steps:
 
 ## Technologies Used
 
-React: A JavaScript library for building user interfaces.
-React Router: For handling routing and navigation within the application.
-Tailwind CSS: A utility-first CSS framework for styling the application.
-Context API: Used for state management and sharing data between components.
-Jest and React Testing Library: For writing and running unit tests.
+- React A JavaScript library for building user interfaces.
+- React Router: For handling routing and navigation within the application.
+- Tailwind CSS: A utility-first CSS framework for styling the application.
+- Context API: Used for state management and sharing data between components.
+- Jest and React Testing Library: For writing and running unit tests.
 
