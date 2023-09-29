@@ -10,28 +10,28 @@ export default function UniversityProvider({ children }) {
   const [perPage] = useState(20);
   const [totalPages, setTotalPages] = useState(1);
 
-  // Function to fetch universities based on the selected country
-  const fetchUniversities = async (country) => {
-    try {
-      const response = await fetch(
-        `http://universities.hipolabs.com/search?country=${country}`
-      );
-      const data = await response.json();
-      console.log(data);
-      setUniversities(data);
-      setTotalPages(Math.ceil(data.length / perPage));
-      setCurrentPage(1);
-    } catch (error) {
-      console.error("Error fetching universities:", error);
-      setUniversities([]);
-      setCurrentPage(1);
-    }
-  };
-
   // Fetch universities when the selected country changes
   useEffect(() => {
+    // Function to fetch universities based on the selected country
+    const fetchUniversities = async (country) => {
+      try {
+        const response = await fetch(
+          `http://universities.hipolabs.com/search?country=${country}`
+        );
+        const data = await response.json();
+        console.log(data);
+        setUniversities(data);
+        setTotalPages(Math.ceil(data.length / perPage));
+        setCurrentPage(1);
+      } catch (error) {
+        console.error("Error fetching universities:", error);
+        setUniversities([]);
+        setCurrentPage(1);
+      }
+    };
+
     fetchUniversities(selectedCountry);
-  }, [selectedCountry, fetchUniversities]);
+  }, [selectedCountry]);
 
   // Function to handle page changes
   const handlePageChange = (newPage) => {
