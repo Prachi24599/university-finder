@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { UniversityContext } from "../context/UniversityContext";
 
 const Pagination = () => {
+  // Get pagination related state and functions from the context
   const { currentPage, totalPages, handlePageChange } =
     useContext(UniversityContext);
 
+  // Generate an array of page numbers from 1 to totalPages
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
@@ -13,7 +15,7 @@ const Pagination = () => {
   return (
     <div className="flex justify-center mt-4">
       <button
-        onClick={() => handlePageChange(currentPage - 1)}
+        onClick={() => handlePageChange(currentPage - 1)} // Handle page number click
         disabled={currentPage === 1}
         className="mr-2 px-4 py-2 bg-indigo-500 text-white rounded-md disabled:opacity-50"
       >

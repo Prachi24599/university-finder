@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { UniversityContext } from "../context/UniversityContext";
 
 const CountryDropdown = ({ countries }) => {
+  // Get country-dropdown related state or functions from the context
   const { setSelectedCountry } = useContext(UniversityContext);
 
   return (
@@ -15,7 +16,7 @@ const CountryDropdown = ({ countries }) => {
       <select
         id="country-select"
         onChange={(e) => setSelectedCountry(e.target.value)}
-        className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" // Highlight the current page
       >
         {countries.map((country) => (
           <option key={country} value={country}>

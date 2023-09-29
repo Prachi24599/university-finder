@@ -3,12 +3,14 @@ import { createContext, useState, useEffect } from "react";
 export const UniversityContext = createContext();
 
 export default function UniversityProvider({ children }) {
+  // Define state variables for the context
   const [selectedCountry, setSelectedCountry] = useState("Sweden");
   const [universities, setUniversities] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(20);
   const [totalPages, setTotalPages] = useState(1);
 
+  // Function to fetch universities based on the selected country
   const fetchUniversities = async (country) => {
     try {
       const response = await fetch(
@@ -26,16 +28,19 @@ export default function UniversityProvider({ children }) {
     }
   };
 
+  // Fetch universities when the selected country changes
   useEffect(() => {
     fetchUniversities(selectedCountry);
   }, [selectedCountry]);
 
+  // Function to handle page changes
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
     }
   };
 
+  // Provide state variables and functions through the context
   const value = {
     selectedCountry,
     setSelectedCountry,

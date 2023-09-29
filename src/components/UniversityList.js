@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { UniversityContext } from "../context/UniversityContext";
 
 const UniversityList = () => {
+  // Get university-list related state and functions from the context
   const { universities, currentPage, perPage } = useContext(UniversityContext);
 
   // Calculate the range of universities to display on the current page
