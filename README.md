@@ -26,7 +26,7 @@ To get started with UniFinder, follow these steps:
 
 2. Navigate to the project directory:
      ```bash
-    cd unifinder
+    cd university-finder
 
 3. Install the project dependencies:
     ```bash
